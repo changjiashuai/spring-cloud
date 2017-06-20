@@ -1,0 +1,7 @@
+#spring:
+#  application:
+#    name: foo
+#  cloud:
+#    config:
+#      profile: dev
+#      uri:  http://localhost:${config.port:8888}
