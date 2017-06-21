@@ -1,6 +1,6 @@
 package com.changjiashuai.controller;
 
-import com.changjiashuai.client.VerbClient;
+import com.changjiashuai.service.WordService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,13 +12,13 @@ import org.springframework.web.bind.annotation.RestController;
  * Created by CJS on 2017/6/21.
  */
 @RestController
-public class FeignClientTestController {
+public class HystrixTestController {
 
     @Autowired
-    private VerbClient testClient;
+    WordService wordService;
 
-    @RequestMapping("/feignTest")
-    public String getWord() {
-        return testClient.getVerb2();
+    @RequestMapping("/hystrixTest")
+    public String getSentence() {
+        return wordService.getWord() + " " + wordService.getVerb();
     }
 }
